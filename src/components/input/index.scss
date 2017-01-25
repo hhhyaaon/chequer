@@ -1,0 +1,39 @@
+@import '../../styles/mixins/index.scss';
+@import '../../styles/variable.scss';
+
+$module       :$input;
+
+.#{$module}{
+  position:relative;
+  border:1px solid $border-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  &>input,textarea{
+    height:$form-el-height;
+    width:100%;
+    outline: none;
+    border:none;
+    padding: 0 rem(8px);
+  }
+  &>textarea{
+    height:$form-el-height*3;
+    padding:rem(8px);
+    line-height:$line-height;
+    resize:none;
+  }
+}
+
+.#{$module}-disabled{
+  color:$disabled-font-color;
+  &:after{
+    position: absolute;
+    content:'';
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:$disabled-color;
+    cursor:not-allowed;
+  }
+}
+

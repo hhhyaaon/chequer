@@ -1,0 +1,27 @@
+@mixin flicker(
+  $from-wid, 
+  $from-hei,
+  $to-wid:$from-wid,
+  $to-hei:$from-hei,
+  $name:'zoom'
+){
+  @keyframes #{$name}{
+    0% {
+      width: $from-wid;
+      height:$from-hei;
+      opacity:0;
+    }
+    50% {
+      width: $to-wid;
+      height:$to-hei;
+      opacity:1,
+    }
+    100%{
+      width: $from-wid;
+      height:$from-hei;
+      opacity:0,
+    }
+  }
+}
+
+ 

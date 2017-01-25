@@ -1,0 +1,107 @@
+@import '../../styles/mixins/index.scss';
+@import '../../styles/variable.scss';
+@import '../../styles/anims/flicker.scss';
+@import '../../styles/anims/fade.scss';
+@import '../../styles/anims/rotate.scss';
+
+$module       :$loading;
+
+
+
+.#{$module}{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  background-color:$bg;
+}
+.#{$module}-notanim{
+  display: none;
+}
+
+.#{$module}-icon{
+  &:after,&:before{
+    content: '';   
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+
+/*
+ animation
+ */
+$anim-flicker         :#{$module}-flicker;
+$anim-flicker-inv     :#{$module}-flicker-inv;
+$anim-fade-in         :#{$module}-fade-in;
+$anim-fade-out        :#{$module}-fade-out;
+$anim-rotateZ         :#{$module}-rotateZ;
+
+@include flicker(
+  0,
+  0,
+  rem(30px),
+  rem(30px),
+  $anim-flicker
+);
+@include flicker(
+  rem(40px),
+  rem(40px),
+  0,
+  0,
+  $anim-flicker-inv
+);
+@include fade-in($anim-fade-in);
+@include fade-out($anim-fade-out);
+@include rotate-z($anim-rotateZ,0deg,360deg);
+
+
+.#{$module}-show{
+  animation: #{$anim-fade-in} 0.4s both;
+  -webkit-animation:#{$anim-fade-in} 0.4s both;
+}
+
+.#{$module}-hide{
+  animation:#{$anim-fade-out} 0.5s both;
+  -webkit-animation:#{$anim-fade-out} 0.5s both;
+}
+
+.#{$module}-flicker{
+  &:after,&:before{
+    border-radius: 50%;
+  }
+  &:after{
+    background-color:getInPt($primarys,-1);
+    animation: #{$anim-flicker} 1.5s infinite;
+    -webkit-animation:#{$anim-flicker} 1.5s infinite;
+  }
+  &:before{
+    background-color:getInPt($primarys,+1);
+    animation: #{$anim-flicker-inv} 1.5s infinite;
+    -webkit-animation:#{$anim-flicker-inv} 1.5s infinite;
+  }
+}
+
+.#{$module}-rotate{
+  &:after{
+    background-color:$bg;
+    width:rem(20px);
+    height:rem(20px);
+    border-radius: 50%;
+  }
+  &:before{
+    width:rem(0px);
+    height:rem(30px);
+    border-left:rem(5px) solid $primary-color;
+    border-right:rem(5px) solid $primary-color;
+    animation:#{$anim-rotateZ} 1s infinite;
+    -webkit-animation:#{$anim-rotateZ} 1s linear infinite;
+  }
+}

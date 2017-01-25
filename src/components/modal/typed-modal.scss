@@ -1,0 +1,39 @@
+@import '../../styles/variable.scss';
+@import '../../styles/mixins/index.scss';
+
+$module     :$modal;
+
+.#{$modal}-t{
+  min-height: rem(70px);
+  overflow: hidden;
+}
+
+.#{$modal}-tico{
+  font-size:rem(20px);
+  float: left;
+}
+
+.#{$modal}-success{
+  color: $success-color;
+}
+
+.#{$modal}-warning{
+  color: $warning-color;
+}
+
+.#{$modal}-error{
+  color: $error-color;
+}
+
+.#{$modal}-info{
+  color: $info-color;
+}
+
+.#{$modal}-confirm{
+  color: $warning-color;
+}
+
+.#{$modal}-tctn{
+  overflow: hidden;
+  margin:rem(2px) 0 0 rem(25px);
+}

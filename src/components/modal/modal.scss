@@ -1,0 +1,114 @@
+@import '../../styles/variable.scss';
+@import '../../styles/mixins/index.scss';
+@import '../../styles/anims/zoom-x.scss';
+
+$module           :$modal;
+
+.#{$module}{
+  position:relative;
+  display: none;
+  width:0;
+}
+
+.#{$module}-layer{
+  background-color:rgba(0,0,0,0.1);
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.#{$module}-container{
+  width:rem(400px); // media query
+  margin:rem(100px) auto 0 auto;
+}
+
+.#{$module}-panel{
+  //width:rem(500px);
+  position: relative;
+  z-index: 1;
+  background-color:$bg;
+  border:1px solid $border-color;
+  box-shadow: 2px 2px 12px $border-color;
+  margin:auto;
+}
+
+/*
+ header
+*/
+.#{$module}-title{
+  padding:rem(10px);
+  overflow:hidden;
+  border-bottom:1px solid $border-color;
+}
+
+
+.#{$module}-title-txt{
+  float:left;
+}
+
+.#{$module}-opa{
+  cursor: pointer;
+  text-align: right;
+}
+
+/*
+content
+*/
+.#{$module}-ctn{
+  padding:rem(15px) rem(20px);
+}
+
+/*
+footer
+*/
+.#{$module}-footer{
+  border-top:1px solid $border-color;
+  padding:rem(7px);
+  text-align: right;
+
+  .#{$btn}{
+    margin-left:$hov-spacing;
+  }
+}
+
+/*
+animate
+*/
+$anim-show:   #{$module}-show;
+$anim-hide:   #{$module}-hide;
+
+@include zoom-x(
+  0,
+  100%,
+  $anim-show
+);
+
+@include zoom-x(
+  100%,
+  0,
+  $anim-hide
+);
+
+.#{$module}-anim-show{
+   display: block;
+  .#{$module}-panel{
+    width: 100%;
+    display: block;
+    animation:$anim-show 0.2s;
+  }
+}
+
+.#{$module}-anim-hide{
+  display: none;
+  .#{$module}-panel{
+    width: 0;
+    display: none;
+    animation:$anim-hide 0.2s;
+  }
+}
+
+
+
+

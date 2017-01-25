@@ -1,0 +1,124 @@
+@import '../../styles/variable.scss';
+@import '../../styles/pantone.scss';
+@import '../../styles/mixins/index.scss';
+
+$module           :$btn;
+
+$btn-bg           :$default-color;
+$btn-bg-primary   :$primary-color;
+$btn-bg-minor     :$bg;
+
+
+
+.#{$module}{
+  //font-size:rem(14px);
+  color:rgb(56,69,79);
+  background-color:$btn-bg;
+  padding:rem(8px) rem(16px);
+  border:1px solid $border-color;
+  border-radius: $border-radius;
+  outline: none;
+  cursor: pointer;
+}
+
+/* 
+  default
+*/
+.#{$module}-default{
+  &:hover{
+    color:getInPt($primarys,-1);
+    border-color:getInPt($primarys,-1);
+  }
+  &:active{
+    color:getInPt($primarys,+1);
+    border-color:getInPt($primarys,+1);
+  }
+}
+
+/* 
+    primary
+  */
+.#{$module}-primary{
+  color:$iv-font-color;
+  background-color:$btn-bg-primary;
+  border-color:$primary-color;
+  &:hover{
+    background-color: getInPt($primarys,-1); 
+    border-color:getInPt($primarys,-1);
+  }
+  &:active{
+    background-color:getInPt($primarys,+1);
+    border-color:getInPt($primarys,+1);
+  }
+}
+
+
+/* 
+  minor
+*/
+.#{$module}-minor{
+  background-color:$btn-bg-minor;
+  &:hover{
+    color:getInPt($primarys,-1);
+    border-color:getInPt($primarys,-1);
+  }
+  &:active{
+    color:getInPt($primarys,+1);
+    border-color:getInPt($primarys,+1);
+  }
+}
+
+/* 
+  disabled
+*/
+.#{$module}-disabled{
+  cursor:not-allowed;
+  background-color: $disabled-color;
+  color:$disabled-font-color;
+  border-color: $border-color;
+  &:hover{
+    background-color:$disabled-color;
+    color:$disabled-font-color;
+    border-color: $border-color;
+  }
+}
+
+/*
+  icon
+*/
+.#{$module}-ico{
+  &>.#{$module}-icon{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &>.#{$module}-ctn{
+     margin-left: rem($hov-spacing);
+     display: inline-block;
+     vertical-align: middle;
+  }
+}
+
+.#{$module}-ico-only{
+  padding:rem(7px) rem(8px);
+}
+
+
+/*
+  shape
+*/
+.#{$module}-circle{
+  border-radius: 50%;
+}
+
+/*
+  size
+*/
+.#{$module}-small{
+  font-size:rem($base-font-size)/3;
+  padding:rem(6px) rem(10px);
+}
+
+.#{$module}-large{
+  font-size:rem($base-font-size)*1.2;
+  padding:rem(10px) rem(18px);
+}

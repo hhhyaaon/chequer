@@ -1,0 +1,25 @@
+@mixin zoom-x($from-wid, $to-wid:$from-wid,$name:'zoom-x'){
+  @keyframes #{$name}{
+    from {
+      display: block;
+      width: $from-wid;
+      @if $from-wid==0 {
+        opacity: 0
+      }else{
+        opacity: 1
+      }
+    }
+
+    to {
+      width: $to-wid;
+      display: block;
+      @if $to-wid==0 {
+        opacity: 0
+      }else{
+        opacity: 1
+      }
+    }
+  }
+}
+
+ 

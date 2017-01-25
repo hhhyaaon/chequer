@@ -1,0 +1,7 @@
+@import '../variable.scss';
+@import '../pantone.scss';
+
+@function getInPt($pt,$offset){
+  $idx  :index($pt, $primary-color) + $offset;
+  @return nth($pt, $idx);
+}

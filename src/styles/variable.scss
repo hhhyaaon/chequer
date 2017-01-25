@@ -1,0 +1,64 @@
+
+
+/*
+----base----
+*/
+// 字号基准
+$base-font-size         :14px;  // px:rem => 14:1
+// 默认文字颜色
+$base-font-color        :#666666;
+// 默认文字颜色
+$disabled-font-color    :#CCCCCC;
+// 默认文字颜色（反色）
+$iv-font-color          :white;
+// 最小横向间距
+$hov-spacing            :5px;
+// 最小纵向间距
+$ver-spacing            :16px;
+// 文字行距
+$line-height            :1.15;
+
+
+/*
+----color----
+*/
+// 默认背景色
+$bg                     :white;
+// 默认颜色
+$default-color          :#F6F6F6;
+// 禁用颜色
+$disabled-color         :#F6F6F6;
+// 主题色
+$primary-color          :#5890FF;
+// 成功时颜色
+$success-color          :#76D050;
+// 失败/错误时颜色
+$error-color            :#FF4200;
+// 警告时颜色
+$warning-color          :#FFAA00;
+// 提示信息时颜色
+$info-color             :#5890FF;
+
+/*
+----border----
+*/
+// 默认边框颜色
+$border-color           :#D9D9D9;
+// 默认边框弧度
+$border-radius          :4px;
+
+//----form-element----
+$form-el-height        :rem(30px);
+
+
+
+
+//----module----
+$prefix       :'chq-';
+
+$btn          :$prefix+'btn';
+$ico          :$prefix+'ico';
+$modal        :$prefix+'modal';
+$input        :$prefix+'input';
+$loading      :$prefix+'loading';
+

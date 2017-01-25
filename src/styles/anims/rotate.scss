@@ -1,0 +1,12 @@
+@mixin rotate-z($name,$from-deg,$to-deg,$orign:center){
+  @keyframes #{$name}{
+    from{
+      transform: rotateZ($from-deg);
+      transform-origin: $orign;
+    }
+    to{
+      transform: rotateZ($to-deg);
+      transform-origin: $orign
+    }
+  }
+}

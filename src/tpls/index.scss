@@ -1,0 +1,22 @@
+@import '../styles/index.scss';
+
+*{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+}
+
+body{
+  padding:rem(10px) rem(30px);
+}
+
+fieldset{
+  margin:rem(20px) 0;
+  legend{
+    padding:0 rem(5px);
+  }
+}
+
+ul,ol,li{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
