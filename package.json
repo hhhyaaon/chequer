@@ -1,5 +1,5 @@
 {
-  "name": "peggs_web",
+  "name": "chequer",
   "version": "1.0.0",
   "description": "",
   "main": "fis-conf.js",
@@ -31,9 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/peggs/web.git"
+    "url": "git+https://hyaaon@bitbucket.org/peggs/chequer.git"
   },
   "author": "hhhyaaon",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/peggs/web#readme"
+  "homepage": "https://bitbucket.org/peggs/chequer#readme"
 }
