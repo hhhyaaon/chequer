@@ -31,7 +31,6 @@ export default class Input extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps);
   }
 
   render() {
