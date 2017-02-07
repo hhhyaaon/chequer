@@ -115,7 +115,7 @@ export default class Modal extends Component {
           _this.close();
         })
       }
-    }else{
+    } else {
       this.close();
     }
   }

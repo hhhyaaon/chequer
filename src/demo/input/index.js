@@ -21,15 +21,15 @@ export default class D_Input extends React.Component {
             <ul className="input-demo-1">
               <li>
                 <div>姓名</div>
-                <Input />
+                <Input value="hyaaon" />
               </li>
               <li>
                 <div>密码</div>
-                <Input type="password" />
+                <Input type="password" value="123" />
               </li>
               <li>
                 <div>多行文本</div>
-                <Input type="textarea" />
+                <Input type="textarea" value="hello world" />
               </li>
             </ul>
           </div>
@@ -83,6 +83,26 @@ export default class D_Input extends React.Component {
                   type="textarea"
                   value='value'
                   readonly={true} />
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>事件</legend>
+          <div>
+            <ul className="input-demo-1">
+              <li>
+                <div>姓名</div>
+                <Input
+                  value='value'
+                  onChange={(v) => { console.log(v); } } />
+              </li>
+              <li>
+                <div>多行文本</div>
+                <Input
+                  type="textarea"
+                  onChange={(v) => { console.log(v); } }/>
               </li>
             </ul>
           </div>

@@ -19,17 +19,19 @@ export default class Input extends Component {
       PropTypes.string,
       PropTypes.element,
     ]),
+    onChange: PropTypes.func
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      inputTypeArr: ['text', 'password', 'textarea']
+      inputTypeArr: ['text', 'password', 'textarea'],
+      value: props.value || ''
     };
   }
 
   componentWillReceiveProps(nextProps) {
-
+    console.log('nextProps', nextProps);
   }
 
   render() {
@@ -50,14 +52,22 @@ export default class Input extends Component {
     )
   }
   getInput() {
-    const {type, disabled, readonly, value} = this.props;
-    const {inputTypeArr} = this.state;
+    const {type, disabled, readonly, onChange} = this.props;
+    const {inputTypeArr, value} = this.state;
 
     const attrObj = {
       disabled: !!disabled,
       readOnly: !!readonly,
-      value: value||'',
-      onChange:()=>{}
+      value: value || '',
+      onChange: (e) => {
+        const curVal = e.target.value;
+        this.setState({
+          value: curVal
+        });
+        if (typeof onChange === 'function') {
+          onChange.call(this, curVal);
+        }
+      }
     }
     const inputType = inputTypeArr.filter(t => t === type).length > 0 ? type : 'text';
     return inputType === 'textarea' ?
