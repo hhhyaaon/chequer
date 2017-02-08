@@ -14,13 +14,20 @@ export default class Icon extends Component {
   }
 
   render() {
-    const {type, className} = this.props;
+    const {type, className, children} = this.props;
+    console.log(children);
     const icoClass = classnames({
       'chq-ico': true,
       [`chq-ico-${type}`]: true
     }, className);
     return (
-      <i className={icoClass} />
+      !children ?
+        <i className={icoClass} />
+        :
+        <span className='chq-ico-box'>
+          <i className={icoClass} />
+          <span className='chq-ico-txt'>{children || ''}</span>
+        </span>
     )
   }
 } 

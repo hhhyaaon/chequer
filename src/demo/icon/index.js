@@ -55,9 +55,25 @@ export default class D_Icon extends React.Component {
   render() {
     const iconJSX = this.setIconFont();
     return (
-      <ul id="d_ico_list">
-        {iconJSX}
-      </ul>
+      <div>
+        <ul id="d_ico_list">
+          {iconJSX}
+        </ul>
+        <fieldset>
+          <legend>图标+文字</legend>
+          <div>
+            <p>
+              <Icon type='cross-circle'>失败</Icon>
+            </p>
+            <p>
+              <Icon type='tick-circle'>成功</Icon>
+            </p>
+            <p>
+              <Icon type='search'>搜索</Icon>
+            </p>
+          </div>
+        </fieldset>
+      </div>
     )
   }
 }
