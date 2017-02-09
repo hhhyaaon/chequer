@@ -32,9 +32,9 @@ export default class Button extends React.Component {
       // 按钮类型枚举
       typeArr: ['default', 'primary', 'minor'],
       // 按钮形状枚举
-      shapeArr: ['circle'],
+      shapeArr: ['default', 'circle'],
       // 按钮大小枚举
-      sizeArray: ['small', 'large']
+      sizeArray: ['small', 'default', 'large']
     }
   }
 
@@ -43,8 +43,8 @@ export default class Button extends React.Component {
     const {type, className, disabled, iconType, shape, size, children } = this.props;
 
     const funcType = typeArr.filter(t => t === type).length > 0 ? type : 'default';
-    const shapeType = shapeArr.filter(s => s === shape).length > 0 ? shape : '';
-    const sizeType = sizeArray.filter(s => s === size).length > 0 ? size : '';
+    const shapeType = shapeArr.filter(s => s === shape).length > 0 ? shape : 'default';
+    const sizeType = sizeArray.filter(s => s === size).length > 0 ? size : 'default';
 
     const btnClass = classnames({
       'chq-btn': true,
