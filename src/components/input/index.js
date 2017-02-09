@@ -10,7 +10,7 @@ export default class Input extends Component {
     type: PropTypes.string,
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
-    size: PropTypes.string,
+    // size: PropTypes.string,
     prefix: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
