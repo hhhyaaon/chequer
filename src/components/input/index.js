@@ -35,18 +35,33 @@ export default class Input extends Component {
 
   render() {
 
-    const {disabled, readonly} = this.props;
+    const {disabled, readonly, prefix, suffix} = this.props;
 
-    const inputCls = classnames({
+    const inputWrapCls = classnames({
       'chq-input': true,
+      'chq-input-prefix': !!prefix,
+      'chq-input-suffix': !!suffix
+    });
+    const inputCls = classnames({
+      'chq-input-box': true,
       'chq-input-disabled': !!disabled,
       'chq-input-readonly': !!readonly,
     });
     const inputBox = this.getInput();
 
     return (
-      <div className={inputCls}>
-        {inputBox}
+      <div className={inputWrapCls}>
+        {!!prefix ?
+          <div className='chq-input-addon chq-input-pf'>{prefix}</div>
+          :
+          null
+        }
+        {!!suffix ?
+          <div className='chq-input-addon chq-input-sf'>{suffix}</div>
+          :
+          null
+        }
+        <div className={inputCls}>{inputBox}</div>
       </div>
     )
   }

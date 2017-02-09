@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Container from '../../tpls/index';
 import Input from '../../components/input';
+import Icon from '../../components/icon';
 import './index.scss';
 
 
@@ -34,6 +35,40 @@ export default class D_Input extends React.Component {
             </ul>
           </div>
         </fieldset>
+
+        <fieldset>
+          <legend>前缀/后缀</legend>
+          <div>
+            <ul className="input-demo-1">
+              <li>
+                <div>金额</div>
+                <Input
+                  value="100"
+                  prefix="$" />
+              </li>
+              <li>
+                <div>概率</div>
+                <Input
+                  suffix="%"
+                  value="50" />
+              </li>
+              <li>
+                <div>前后缀</div>
+                <Input
+                  value="23"
+                  prefix="第"
+                  suffix="行" />
+              </li>
+              <li>
+                <div>图标</div>
+                <Input
+                  value="正确"
+                  prefix={<Icon type="tick-circle" />} />
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+
 
         <fieldset>
           <legend>禁用输入框</legend>
@@ -96,13 +131,13 @@ export default class D_Input extends React.Component {
                 <div>姓名</div>
                 <Input
                   value='value'
-                  onChange={(v) => { console.log(v); } } />
+                  onChange={(v) => { console.log(v); }} />
               </li>
               <li>
                 <div>多行文本</div>
                 <Input
                   type="textarea"
-                  onChange={(v) => { console.log(v); } }/>
+                  onChange={(v) => { console.log(v); }} />
               </li>
             </ul>
           </div>
