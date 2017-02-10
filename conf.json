@@ -1,0 +1,10 @@
+{
+  "entry": {
+    "modal": "./modal/index.js",
+    "button": "./button/index.js",
+    "icon": "./icon/index.js",
+    "input": "./input/index.js",
+    "loading": "./loading/index.js",
+    "tab": "./tab/index.js"
+  }
+}

@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var path = require('path');
 var fs = require('fs');
 var exec = require('child_process').exec;
-var conf = require('./build/conf.json');
+var conf = require('./conf.json');
 
 var root = path.join(__dirname, './');
 var component = path.join(root, './src/components/');
@@ -27,7 +27,7 @@ gulp.task('component', function () {
 });
 
 
-//gulp component -c [name]
+//gulp component -n [name]
 function createComponentDir(cmd, comps) {
   if (comps.length === 0) {
     console.error('name is not defined');
@@ -51,7 +51,7 @@ function createComponentDir(cmd, comps) {
         });
       // build/conf.json中添加入口文件
       conf.entry[name] = "./" + name + "/index.js";
-      fs.writeFileSync('./build/conf.json', JSON.stringify(conf, null, 2));
+      fs.writeFileSync('./conf.json', JSON.stringify(conf, null, 2));
     })
   }
 }
