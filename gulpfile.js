@@ -5,8 +5,8 @@ var exec = require('child_process').exec;
 var conf = require('./build/conf.json');
 
 var root = path.join(__dirname, './');
-var component = path.join(root, './src/components/');
-var demo = path.join(root, './src/demo/');
+var component = path.join(root, './components/');
+var demo = path.join(root, './demo/');
 
 
 

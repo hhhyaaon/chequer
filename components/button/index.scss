@@ -43,12 +43,13 @@ $btn-bg-minor     :$bg;
   background-color:$btn-bg-primary;
   border-color:$primary-color;
   &:hover{
+    color:$iv-font-color;
     background-color: getInPt($primarys,-1); 
     border-color:getInPt($primarys,-1);
   }
   &:active{
-    background-color:getInPt($primarys,+1);
-    border-color:getInPt($primarys,+1);
+    background-color:getInPt($primarys,1);
+    border-color:getInPt($primarys,1);
   }
 }
 

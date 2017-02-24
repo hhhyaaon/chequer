@@ -7,14 +7,14 @@ var conf = require('./conf.json');
 
 var root = path.join(__dirname, '../');
 var dist = path.join(root, "./dist");
-var src = path.join(root, './src');
+var src = path.join(root);
 
 
 var conf = Object.assign({}, baseWebpackConf, {
   entry: getEntry(),
   output: {
-    path: path.join(dist, './chequer'),
-    publicPath: '/chequer/',
+    path: path.join(dist, './components'),
+    publicPath: '/components/',
     filename: '[name]/index.js'
   },
   plugins: [
@@ -43,7 +43,7 @@ function getHtmlChunks() {
     return new htmlWebpackPlugin({
       title: name.replace(/(.)/, function (w, $1) { return $1.toUpperCase() }),
       template: path.join(src, './tpls/basic.html'),
-      filename: path.join(dist, './chequer/' + [name] + '/index.html'),
+      filename: path.join(dist, './demo/' + [name] + '/index.html'),
       chunks: [name],
     });
   }).concat(
@@ -51,11 +51,11 @@ function getHtmlChunks() {
       title: 'Chequer装逼小页面',
       content: '<ul>' + (
         Object.getOwnPropertyNames(conf.entry).map(function (n) {
-          return `<li><a href='/chequer/${n}/'>${n}</a></li>`
+          return `<li><a href='/demo/${n}/'>${n}</a></li>`
         }).join('\n')
       ) + '</ul>',
       template: path.join(src, './tpls/basic.html'),
-      filename: path.join(dist, './chequer/index.html'),
+      filename: path.join(dist, './demo/index.html'),
       inject: false
     })
     )
