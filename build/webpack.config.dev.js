@@ -7,7 +7,7 @@ var conf = require('./conf.json');
 
 var root = path.join(__dirname, '../');
 var dist = path.join(root, "./dist");
-var src = path.join(root, './src');
+var src = path.join(root);
 
 
 var conf = Object.assign({}, baseWebpackConf, {
