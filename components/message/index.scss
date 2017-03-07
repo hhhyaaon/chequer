@@ -1,0 +1,46 @@
+@import '../../styles/mixins/index.scss';
+@import '../../styles/variable.scss';
+// @import '../../styles/anims/flicker.scss';
+// @import '../../styles/anims/fade.scss';
+// @import '../../styles/anims/rotate.scss';
+
+$module       :$msg;
+
+
+
+.#{$module}-wrap{
+    position: relative;
+    width:100%;
+    display:block;
+    // color:$iv-font-color;
+    text-align: center;
+}
+.#{$module}{
+    position: absolute;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    padding:rem(7px);
+    background-color: $bg;
+    border-radius: $border-radius;
+}
+.#{$module}-default{
+    border: 1px solid $border-color;
+}
+
+.#{$module}-primary{
+    background-color: $primary-color;
+}
+.#{$module}-success{
+    background-color:$success-color;
+}
+
+.#{$module}-error{
+    background-color: $error-color;
+}
+
+.#{$module}-warning{
+    background-color: $warning-color;
+}
+

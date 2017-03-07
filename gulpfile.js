@@ -27,7 +27,7 @@ gulp.task('component', function () {
 });
 
 
-//gulp component -c [name]
+//gulp component -n [name]
 function createComponentDir(cmd, comps) {
   if (comps.length === 0) {
     console.error('name is not defined');

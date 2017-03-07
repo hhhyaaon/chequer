@@ -15,7 +15,6 @@ export default class Icon extends Component {
 
   render() {
     const {type, className, children} = this.props;
-    console.log(children);
     const icoClass = classnames({
       'chq-ico': true,
       [`chq-ico-${type}`]: true

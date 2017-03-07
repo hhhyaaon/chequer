@@ -4,6 +4,7 @@
     "button": "./button/index.js",
     "icon": "./icon/index.js",
     "input": "./input/index.js",
-    "loading": "./loading/index.js"
+    "loading": "./loading/index.js",
+    "message": "./message/index.js"
   }
 }

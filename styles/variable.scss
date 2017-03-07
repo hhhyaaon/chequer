@@ -33,7 +33,7 @@ $primary-color          :#5890FF;
 // 成功时颜色
 $success-color          :#76D050;
 // 失败/错误时颜色
-$error-color            :#FF4200;
+$error-color            :rgb(219,68,55);
 // 警告时颜色
 $warning-color          :#FFAA00;
 // 提示信息时颜色
@@ -61,4 +61,5 @@ $ico          :$prefix+'ico';
 $modal        :$prefix+'modal';
 $input        :$prefix+'input';
 $loading      :$prefix+'loading';
+$msg          :$prefix+'msg';
 
