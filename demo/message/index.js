@@ -17,10 +17,15 @@ export class D1_Message extends Component {
                 <legend>默认Message</legend>
                 <div>
                     <Message>默认Message</Message>
-                    <Button type='primary'>显示</Button>
+                    <Button type='primary' onClick={() => { this.onShow() }}>显示</Button>
                 </div>
             </fieldset>
         )
+    }
+    onShow() {
+        this.setState({
+            isShow: true
+        });
     }
 }
 export class D_Message extends Component {

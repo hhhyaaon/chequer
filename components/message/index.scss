@@ -16,6 +16,7 @@ $module       :$msg;
     text-align: center;
 }
 .#{$module}{
+    display: none;
     position: absolute;
     z-index: 999;
     top:0;
@@ -44,3 +45,7 @@ $module       :$msg;
     background-color: $warning-color;
 }
 
+
+.chq-msg-show{
+    display: block;
+}

@@ -11,6 +11,7 @@ export default class Message extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isShow: false,
             typeArr: ['default', 'primary', 'success', 'error', 'warning']
         }
     }
@@ -19,11 +20,13 @@ export default class Message extends Component {
             children,
             type } = this.props;
         const {
-                typeArr } = this.state;
+            typeArr,
+            isShow } = this.state;
         const msgType = typeArr.filter(t => t === type).length > 0 ? type : 'default';
         const cls = classnames({
             [`chq-msg`]: true,
-            [`chq-msg-${msgType}`]: true
+            [`chq-msg-${msgType}`]: true,
+            [`chq-msg-show`]: isShow === true
         });
 
         return (
